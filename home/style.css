@@ -1,0 +1,10 @@
+
+:root{
+    --color-purple-100:rgb(207, 119, 119);
+    --color-purple-200: #843838;
+    --color-purple-300: #bababa;
+
+}
+body{
+    background-color: var( --color-purple-300);
+}

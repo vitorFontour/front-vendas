@@ -1,0 +1,45 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --color-purple-100: rgb(207, 119, 119);
+    --color-purple-200: #cfcece;
+    --color-purple-300: #bababa;
+
+}
+
+body {
+    background-color: var(--color-purple-300);
+    min-height: 100vh;
+    display: flex;
+
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+li {
+
+    background-color: var(--color-purple-200);
+
+    border-radius: 16px;
+    padding: 16px;
+}
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 900px; 
+    margin: 0 auto;
+    flex-direction: column;
+    gap: 10px;
+}
+div{
+    display: flex;
+    gap: 12px;
+}
