@@ -1,36 +1,46 @@
 const myHeaders = {
     "Content-Type": "application/json",
 };
-async function getProduto(){  
+async function getProduto() {
 
     const res = await fetch("http://localhost:3001/produto")
-   
+
 
     const produtos = await res.json()
     const select = document.querySelector('select')
 
-    produtos.forEach(callback=>{
-        select.insertAdjacentHTML("beforeend",`
+    produtos.forEach(callback => {
+        select.insertAdjacentHTML("beforeend", `
         <option value=${callback.id}>${callback.descricao}</option>
         `)
     })
 }
 getProduto()
 
-function venda(){
+async function venda() {
     const inputQuantidade = document.querySelector("#input-quantidade")
     const selectVenda = document.querySelector("#select-venda")
+    const dia = new Date().getDate()
+    const mes = new Date().getMonth() + 1
 
     const venda = {
-        produto: selectVenda.ariaValueMax,
-        
+        produto: selectVenda.value,
+        quantidade: inputQuantidade.value,
+        dia: dia,
+        mes: mes
     }
 
+    const bodyJson = JSON.stringify(venda)
+    const res = await fetch(
+        "http://localhost:3001/venda",
+        {
+            headers: myHeaders,
+            method: "POST",
+            body: bodyJson
+        }
+    )
+    console.log(await res.json())
 }
-const dia = new Date().getDate()
-console.log(dia)
-const mes = new Date().getMonth()
-
 
 
 const form = document.querySelector('form')
