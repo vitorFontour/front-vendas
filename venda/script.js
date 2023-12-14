@@ -1,9 +1,10 @@
+import {baseUrl} from'../api.js'
 const myHeaders = {
     "Content-Type": "application/json",
 };
 async function getProduto() {
 
-    const res = await fetch("http://localhost:3001/produto")
+    const res = await fetch(`${baseUrl}/produto`)
 
 
     const produtos = await res.json()
@@ -32,7 +33,7 @@ async function venda() {
 
     const bodyJson = JSON.stringify(venda)
     const res = await fetch(
-        "http://localhost:3001/venda",
+        `${baseUrl}/venda`,
         {
             headers: myHeaders,
             method: "POST",

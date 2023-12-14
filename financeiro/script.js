@@ -1,5 +1,6 @@
-import {DBproduto} from "../api";
-import {DBvenda} from "../api";
+import {DBproduto} from "../api.js";
+import {DBvenda} from "../api.js";
+import {baseUrl} from'../api.js'
 const myHeaders = {
     "Content-Type": "application/json",
 };

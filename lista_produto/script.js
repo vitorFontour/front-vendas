@@ -1,9 +1,10 @@
+import {baseUrl} from'../api.js'
 const myHeaders = {
     "Content-Type": "application/json",
 };
 async function lista() {
     const res = await fetch(
-        "http://localhost:3001/produto",
+        `${baseUrl}/produto`,
         {
             headers: myHeaders
         }

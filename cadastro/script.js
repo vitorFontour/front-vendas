@@ -1,4 +1,4 @@
-
+import {baseUrl} from'../api.js'
 async function cadastro() {
     const myHeaders = {
         "Content-Type": "application/json",
@@ -19,7 +19,7 @@ async function cadastro() {
     const btnCadastro = document.querySelector("#btn-cadastro")
 
     const res = await fetch(
-        "http://localhost:3001/produto",
+        `${baseUrl}/produto`,
         {
             headers: myHeaders,
             method: "POST",
